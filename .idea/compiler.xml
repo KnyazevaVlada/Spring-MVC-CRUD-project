@@ -7,7 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-MVC-CRUD" />
+        <module name="spring_mvc_hibernate_aop" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-MVC-CRUD" target="1.17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

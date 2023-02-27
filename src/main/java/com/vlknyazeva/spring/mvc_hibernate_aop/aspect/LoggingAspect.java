@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class MyLoggingAspect {
+public class LoggingAspect {
 
-    @Around("execution(* com.vlknyazeva.spring.mvc_hibernate_aop.dao.*.*(..))")
+    @Around("execution(* com.vlknyazeva.spring.mvc_hibernate_aop.repository.*.*(..))")
     //Прописав Joint Point в параметре метода Advice, мы получаем доступ к информации о сигнатуре и параметрах
     // метода с бизнес- логикой
     public Object aroundAllRepositoryMethodsAdvice(ProceedingJoinPoint point)

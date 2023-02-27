@@ -1,6 +1,6 @@
 package com.vlknyazeva.spring.mvc_hibernate_aop.service;
 
-import com.vlknyazeva.spring.mvc_hibernate_aop.dao.EmployeeDAO;
+import com.vlknyazeva.spring.mvc_hibernate_aop.repository.EmployeeRepository;
 import com.vlknyazeva.spring.mvc_hibernate_aop.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,33 +13,33 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
-    private EmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
 
     @Override
     @Transactional     //spring берет на себя ответственность за открытие/зкрытие транзакций
     public List<Employee> getAllEmployees() {
 
-        return employeeDAO.getAllEmployees();
+        return employeeRepository.getAllEmployees();
     }
 
     @Override
     @Transactional
     public void saveEmployee(Employee employee) {
 
-        employeeDAO.saveEmployee(employee);
+        employeeRepository.saveEmployee(employee);
     }
 
     @Override
     @Transactional
     public Employee getEmployee(int id) {
 
-        return employeeDAO.getEmployee(id);
+        return employeeRepository.getEmployee(id);
     }
 
     @Override
     @Transactional
     public void deleteEmployee(int id) {
 
-        employeeDAO.deleteEmployee(id);
+        employeeRepository.deleteEmployee(id);
     }
 }

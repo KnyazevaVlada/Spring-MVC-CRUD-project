@@ -1,4 +1,4 @@
-package com.vlknyazeva.spring.mvc_hibernate_aop.dao;
+package com.vlknyazeva.spring.mvc_hibernate_aop.repository;
 
 import com.vlknyazeva.spring.mvc_hibernate_aop.entity.Employee;
 import org.hibernate.Session;
@@ -6,12 +6,11 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Repository // это спец-ый @Component для DAO
-public class EmployeeDAOImpl implements EmployeeDAO {
+public class EmployeeRepositoryImpl implements EmployeeRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
